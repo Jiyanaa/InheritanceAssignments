@@ -1,5 +1,6 @@
 package com.training.assignments;
 
+import com.training.assignments.exception.NullInputStringexception;
 
 public class MarkettingExclusive extends EmployeeManagement{
 	private int kelometerTravelled;
@@ -12,7 +13,7 @@ public class MarkettingExclusive extends EmployeeManagement{
 	
 	
 	
-	public MarkettingExclusive(String employeeName,double basicSalary,double medical,int kelometerTravelled) {
+	public MarkettingExclusive(String employeeName,double basicSalary,double medical,int kelometerTravelled) throws NullInputStringexception {
 		super(employeeName,basicSalary,medical);
 		this.kelometerTravelled = kelometerTravelled;
 		this.tourAllowance =this.kelometerTravelled *5;

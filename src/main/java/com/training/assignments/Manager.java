@@ -1,5 +1,6 @@
 package com.training.assignments;
 
+import com.training.assignments.exception.NullInputStringexception;
 
 public class Manager extends EmployeeManagement{
 	
@@ -11,7 +12,7 @@ public class Manager extends EmployeeManagement{
 	public Manager() {
 	}
 	
-	public Manager(String employeeName,double basicSalary,double medical) {
+	public Manager(String employeeName,double basicSalary,double medical) throws NullInputStringexception {
 		super(employeeName,basicSalary,medical);
 		this.petrolAllowance = basicSalary * 8/100;
 		this.foodAllowance = basicSalary * 13/100;

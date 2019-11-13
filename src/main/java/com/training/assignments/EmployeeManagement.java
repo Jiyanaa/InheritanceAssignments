@@ -1,5 +1,6 @@
 package com.training.assignments;
 
+import com.training.assignments.exception.NullInputStringexception;
 
 public class EmployeeManagement {
 	
@@ -17,8 +18,11 @@ public class EmployeeManagement {
 		this.employeeId = ++employeeId;
 	}
 	
-	public EmployeeManagement(String employeeName, double basicSalary,double medical) {
+	public EmployeeManagement(String employeeName, double basicSalary,double medical) throws NullInputStringexception {
 		this();
+		validateInputParameters(employeeName,basicSalary,medical);
+		
+		
 		this.employeeName = employeeName;
 		this.basicSalary = basicSalary;
 		this.HRA = this.basicSalary *50/100 ;
@@ -27,10 +31,10 @@ public class EmployeeManagement {
 		this.PT = 200.0;
 		this.grossSalary = calculateGrossSalary();
 		this.netSalary = calculateNetSalary();
+		
 	}
 
-	
-	
+
 	public int getEmployeeId() {
 		return employeeId;
 	}
@@ -136,5 +140,14 @@ public class EmployeeManagement {
 	
 	public static String showDetails(EmployeeManagement employee) {
 		return employee.displayDetails();
+	}
+	
+	public static void validateInputParameters(String employeeName, double basicSalary, double medical) throws NullInputStringexception {
+		if(employeeName.isEmpty() || employeeName==null || employeeName.isBlank()) {
+			throw new NullInputStringexception("Input value should not be null or blank");
+		}
+		if(basicSalary < 1 || medical <1) {
+			throw new NullInputStringexception("Input valid salary amount");
+		}	
 	}
 }
