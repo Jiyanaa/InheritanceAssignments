@@ -29,13 +29,13 @@ public class EmployeeManagementTest {
 	public void testToGetNetSalaryOfMarkettingExclusive() {
 		EmployeeManagement me = new MarkettingExclusive("Aradhya",50000,500,5);
 		double expected = me.calculateNetSalary();
-		assertEquals(69300.0, expected,0.01);
+		assertEquals(70830, expected,0.01);
 	}
 	@Test
 	public void testToGetNetSalaryOfManager() {
 		EmployeeManagement manager = new Manager("Anagha",20000,500);
 		double expected = manager.calculateNetSalary();
-		assertEquals(27900.0, expected,0.01);
+		assertEquals(32700.0, expected,0.01);
 	}
 	
 	@Test
