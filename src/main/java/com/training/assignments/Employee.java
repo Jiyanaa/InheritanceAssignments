@@ -16,6 +16,12 @@ public class Employee {
 	public Employee() {
 	}
 	
+	/**
+	 * @param employeeId
+	 * @param employeeName
+	 * @param basicSalary
+	 * @param medical
+	 */
 	public Employee(int employeeId, String employeeName, double basicSalary,double medical)  {
 		super();
 		

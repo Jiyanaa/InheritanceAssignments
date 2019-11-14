@@ -2,17 +2,38 @@ package com.training.assignments;
 
 import com.training.assignments.exception.NullInputStringexception;
 
-public class MarkettingExclusive extends EmployeeManagement{
+/**
+ * @author swayadav
+ *
+ */
+
+public class MarkettingExclusive extends NewEmployee{
+	
+	/**
+	 * data members/properties for marketting exclusive class
+	 * kelometerTravelled,tourAllowance,telephoneAllowance
+	 */
 	private int kelometerTravelled;
 	private double tourAllowance;
 	private double telephoneAllowance;
 	
 	
+	/**
+	 * default constructor
+	 */
 	public MarkettingExclusive() {
 	}
 	
 	
 	
+	/**
+	 * @param employeeName
+	 * @param basicSalary
+	 * @param medical
+	 * @param kelometerTravelled
+	 * @throws NullInputStringexception
+	 * It calls super constructor and initialized value to data members inside class
+	 */
 	public MarkettingExclusive(String employeeName,double basicSalary,double medical,int kelometerTravelled) throws NullInputStringexception {
 		super(employeeName,basicSalary,medical);
 		this.kelometerTravelled = kelometerTravelled;
@@ -68,6 +89,7 @@ public class MarkettingExclusive extends EmployeeManagement{
 		super.setNetSalary(netSalary);
 		return super.getNetSalary();
 	}
+	
 	public String displayDetails() {
 		String employeeDetails = super.displayDetails() + "\nkelometerTravelled="
 				+ getKelometerTravelled() + "\ntourAllowance=" + getTourAllowance() + "\ntelephoneAllowance=" + getTelephoneAllowance();	

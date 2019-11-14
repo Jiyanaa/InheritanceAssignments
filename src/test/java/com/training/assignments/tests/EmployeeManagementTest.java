@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.training.assignments.EmployeeManagement;
+import com.training.assignments.NewEmployee;
 import com.training.assignments.Manager;
 import com.training.assignments.MarkettingExclusive;
 import com.training.assignments.exception.NullInputStringexception;
@@ -13,27 +13,27 @@ public class EmployeeManagementTest {
 
 	@Test
 	public void testToGetGrossSalaryOfManager() throws NullInputStringexception{
-		EmployeeManagement manager = new Manager("Anagha",20000,500);
+		NewEmployee manager = new Manager("Anagha",20000,500);
 		double expected = manager.calculateGrossSalary();
 		assertEquals(35300.0, expected,0.01);
 	}
 	
 	@Test
 	public void testToGetGrossSalaryOfMarkettingExclusive() throws NullInputStringexception  {
-		EmployeeManagement me = new MarkettingExclusive("Aradhya",50000,500,5);
+		NewEmployee me = new MarkettingExclusive("Aradhya",50000,500,5);
 		double expected = me.calculateGrossSalary();
 		assertEquals(77030.0, expected,0.01);
 	}
 	
 	@Test
 	public void testToGetNetSalaryOfMarkettingExclusive() throws NullInputStringexception {
-		EmployeeManagement me = new MarkettingExclusive("Aradhya",50000,500,5);
+		NewEmployee me = new MarkettingExclusive("Aradhya",50000,500,5);
 		double expected = me.calculateNetSalary();
 		assertEquals(70830, expected,0.01);
 	}
 	@Test
 	public void testToGetNetSalaryOfManager() throws NullInputStringexception {
-		EmployeeManagement manager = new Manager("Anagha",20000,500);
+		NewEmployee manager = new Manager("Anagha",20000,500);
 		double expected = manager.calculateNetSalary();
 		assertEquals(32700.0, expected,0.01);
 	}
@@ -53,9 +53,9 @@ public class EmployeeManagementTest {
 				"foodAllowance=3900.0\n" +
 				"otherAllowance=900.0";
 		
-		EmployeeManagement manager = new Manager("Pooja",30000,200);
-		String actual = EmployeeManagement.showDetails(manager);
-		String result = EmployeeManagement.showDetails(manager);
+		NewEmployee manager = new Manager("Pooja",30000,200);
+		String actual = NewEmployee.showDetails(manager);
+		String result = NewEmployee.showDetails(manager);
 		System.out.println(actual);
 		assertEquals(expected, actual);
 	}
@@ -67,15 +67,15 @@ public class EmployeeManagementTest {
 				"grossSalary=31730.0\n" + "kelometerTravelled=5\n" + "tourAllowance=25.0\n" +
 				"telephoneAllowance=1500.0";
 		
-		EmployeeManagement me = new MarkettingExclusive("rehna",20000,200,5);
-		String result = EmployeeManagement.showDetails(me);
+		NewEmployee me = new MarkettingExclusive("rehna",20000,200,5);
+		String result = NewEmployee.showDetails(me);
 		System.out.println(result);
 		assertEquals(expected, result);
 	}
 	
 	@Test(expected = NullInputStringexception.class)
 	public void testForWrongInputValue() throws NullInputStringexception {
-		EmployeeManagement manager = new Manager("",-500,100);
+		NewEmployee manager = new Manager("",-500,100);
 	}
 	
 	

@@ -1,15 +1,30 @@
 package com.training.assignments;
 
+/**
+ * @author swayadav
+ *
+ */
 public class Training {
 	
+	/**
+	 * priveate properties of training class
+	 * id,subject,fees
+	 */
 	private int id;
 	private String subject;
 	private double fees;
 	
+	/**
+	 * generate automatic id 
+	 */
 	public Training() {
 		this.id = ++id;
 	}
 	
+	/**
+	 * @param subject
+	 * @param fees
+	 */
 	public Training(String subject, double fees) {
 		this();
 		this.subject = subject;
@@ -17,6 +32,10 @@ public class Training {
 	}
 
 
+	/**
+	 * @return
+	 * setter and getter method for properties(id, subject, fees)
+	 */
 	public int getId() {
 		return id;
 	}

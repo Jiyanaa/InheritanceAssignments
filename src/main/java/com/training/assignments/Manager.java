@@ -2,16 +2,33 @@ package com.training.assignments;
 
 import com.training.assignments.exception.NullInputStringexception;
 
-public class Manager extends EmployeeManagement{
+/**
+ * @author swayadav
+ *
+ */
+public class Manager extends NewEmployee{
 	
+	/**
+	 * properties of manager class
+	 * petrolAllowance , foordAllowance, otherAllowance
+	 */
 	private double petrolAllowance;
 	private double foodAllowance;
 	private double otherAllowance;
 	
 
+	/**
+	 * default constuctor
+	 */
 	public Manager() {
 	}
 	
+	/**
+	 * @param employeeName
+	 * @param basicSalary
+	 * @param medical
+	 * @throws NullInputStringexception
+	 */
 	public Manager(String employeeName,double basicSalary,double medical) throws NullInputStringexception {
 		super(employeeName,basicSalary,medical);
 		this.petrolAllowance = basicSalary * 8/100;
